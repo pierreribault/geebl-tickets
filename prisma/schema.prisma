@@ -1,0 +1,19 @@
+datasource db {
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Ticket {
+  id        String   @id @default(uuid())
+  userId    String
+  eventId   String
+  companyId String
+  slotId    String
+  used      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}

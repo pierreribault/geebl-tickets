@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Ticket" ALTER COLUMN "data" SET DATA TYPE JSON,
+ALTER COLUMN "used" SET DEFAULT false;
